@@ -137,11 +137,20 @@ header {
   margin-top: 1rem;
 }
 
-.card.total {
+/* DYNAMIC TOTAL CARD */
+.card.even {
+  background: var(--neutral-color);
+  color: var(--light-color);
+}
+.card.negative {
+  background: var(--negative-color);
+  color: var(--light-color)
+  ;
+}
+.card.positive {
   background: var(--positive-color);
   color: var(--light-color);
 }
-
 /*=====TABLE==================*/
 #transactions {
   display: block;
@@ -189,6 +198,14 @@ table td.expense {
 }
 table td.income {
   color: var(--positive-color);
+}
+
+/*remove button animation*/
+tbody tr td img{
+  transition: 0.25s;
+}
+tbody tr td img:hover{
+  transform: scale(1.25);
 }
 /*=====MODAL==================*/
 .modal-overlay {

@@ -57,6 +57,28 @@ const Transaction = {
   }
 }
 
+const cardTotal = {
+  // LOOKING FOR BETTER SOLUTION
+  dcard(){
+    let dTotal = Transaction.total()
+    if(dTotal == 0){
+       document.querySelector('.total').classList.add('even')
+       document.querySelector('.total').classList.remove('negative')
+       document.querySelector('.total').classList.remove('positive')
+    }
+    if(dTotal < 0){
+       document.querySelector('.total').classList.add('negative')
+       document.querySelector('.total').classList.remove('even')
+       document.querySelector('.total').classList.remove('positive')
+    }
+    if(dTotal > 0){
+       document.querySelector('.total').classList.add('positive')
+       document.querySelector('.total').classList.remove('even')
+       document.querySelector('.total').classList.remove('negative')
+    }
+  }
+}
+
 const DOM = {
   transactionsContainer: document.querySelector('#data-table tbody'),
 
@@ -181,6 +203,7 @@ const Form = {
 
 const App = {
   init() {
+    cardTotal.dcard()
     Transaction.all.forEach(DOM.addTransaction)
 
     DOM.updateBalance()
