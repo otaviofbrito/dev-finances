@@ -41,9 +41,7 @@
       <section id="transactions">
         <h2 class="title sr-only">Transactions</h2>
 
-        <a href="#transactions" class="button new" onclick="Modal.open()"
-          >+ New Transaction</a
-        >
+        <a class="button new" onclick="Modal.open()">+ New Transaction</a>
         <div class="table">
           <table id="data-table">
             <thead>
@@ -54,9 +52,7 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody>
-              
-            </tbody>
+            <tbody></tbody>
           </table>
         </div>
       </section>
@@ -92,12 +88,7 @@
               <input type="date" id="date" name="date" />
             </div>
             <div class="input-group actions">
-              <a
-                href="#transactions"
-                class="button cancel"
-                onclick="Modal.close()"
-                >Cancel</a
-              >
+              <a class="button cancel" onclick="Modal.close()">Cancel</a>
               <button>Send</button>
             </div>
           </form>

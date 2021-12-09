@@ -1,11 +1,11 @@
 /*=====GLOBAL==================*/
 :root {
   /*var-colors*/
-  --background-default-color: #417c3c;
+  --background-default-color: rgb(49, 94, 45);
   --title-color: rgb(69, 143, 255);
   --body-bccolor: #f0f2f5;
   --light-color: white;
-  --positive-color: #49aa26;
+  --positive-color: #05c665;
   --negative-color: #e92929;
   --neutral-color: #3d95e8;
   --table-text-color: #95989b;
@@ -106,7 +106,7 @@ header {
 }
 /*=====BALANCE==================*/
 #balance {
-  margin-top: -8rem;
+  margin-top: -6rem;
 }
 
 #balance h2 {
@@ -200,29 +200,36 @@ table td.income {
   position: fixed;
   top: 0;
 
-  display: flex;
-  align-items: center;
+  display: grid;
+  align-items: flex-end;
   justify-content: center;
 
   opacity: 0;
   visibility: hidden;
   z-index: 999;
 
-  transition: 0.25s;
-}
+  transition: all 0.25s;
 
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
 }
 
 .modal {
   background: var(--body-bccolor);
   padding: 2rem;
-  width: 95%;
+  width: 100%;
   max-width: 500px;
   position: relative;
   z-index: 1;
+  border-radius: 0.5rem 0.5rem 0 0;
+  transition: all 0.25s;
+
+  transform: translateY(10%);
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-overlay.active .modal{
+  transform: translateY(0%);
 }
 /*=====FORM==================*/
 #form {
@@ -270,5 +277,13 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+  }
+  .modal-overlay{
+    display: flex;
+    align-items: center;
+
+  }
+  .modal{
+    border-radius: 0.5rem;
   }
 }
