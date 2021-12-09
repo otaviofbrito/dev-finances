@@ -1,9 +1,9 @@
 /*=====GLOBAL==================*/
 :root {
   /*var-colors*/
-  --background-default-color: rgb(49, 94, 45);
+  --background-default-color: #161a1d;
   --title-color: rgb(69, 143, 255);
-  --body-bccolor: #f0f2f5;
+  --body-bccolor: #e0e1dd;
   --light-color: white;
   --positive-color: #05c665;
   --negative-color: #e92929;
@@ -54,11 +54,17 @@ a {
   text-decoration: none;
 }
 /*=====LINKS/BUTTON==================*/
-a {
-  color: var(--background-default-color);
+a.new {
+  color: var(--light-color);
+  border: 1px var(--positive-color) solid;
+  border-radius: 0.2rem;
+  background: var(--positive-color);
+  padding: 0 0.2rem 0 0.2rem;
+  cursor: pointer;
+  transition: 0.2s;
 }
-a:hover {
-  color: var(--positive-color);
+a.new:hover {
+  opacity: 0.7;
 }
 button {
   width: 100%;
@@ -88,6 +94,7 @@ button:hover {
   justify-content: center;
   opacity: 0.6;
   transition: 0.2s;
+  cursor: pointer;
 }
 .button.cancel:hover {
   opacity: 1;
@@ -144,8 +151,7 @@ header {
 }
 .card.negative {
   background: var(--negative-color);
-  color: var(--light-color)
-  ;
+  color: var(--light-color);
 }
 .card.positive {
   background: var(--positive-color);
@@ -201,10 +207,10 @@ table td.income {
 }
 
 /*remove button animation*/
-tbody tr td img{
+tbody tr td img {
   transition: 0.25s;
 }
-tbody tr td img:hover{
+tbody tr td img:hover {
   transform: scale(1.25);
 }
 /*=====MODAL==================*/
@@ -226,7 +232,6 @@ tbody tr td img:hover{
   z-index: 999;
 
   transition: all 0.25s;
-
 }
 
 .modal {
@@ -245,7 +250,7 @@ tbody tr td img:hover{
   opacity: 1;
   visibility: visible;
 }
-.modal-overlay.active .modal{
+.modal-overlay.active .modal {
   transform: translateY(0%);
 }
 /*=====FORM==================*/
@@ -284,7 +289,13 @@ footer {
   padding: 4rem 0 2rem;
   opacity: 0.5;
 }
-
+footer a {
+  display: inline-block;
+  transition: 0.2s;
+}
+footer a:hover {
+  transform: translateY(-3px);
+}
 /*=====RESPONSIVE==================*/
 @media (min-width: 800px) {
   html {
@@ -295,12 +306,11 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
   }
-  .modal-overlay{
+  .modal-overlay {
     display: flex;
     align-items: center;
-
   }
-  .modal{
+  .modal {
     border-radius: 0.5rem;
   }
 }

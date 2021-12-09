@@ -8,13 +8,15 @@ const Modal = {
   }
 }
 
-
 const Storage = {
   get() {
-    return JSON.parse(localStorage.getItem("dev.finances:transactions")) || []
+    return JSON.parse(localStorage.getItem('dev.finances:transactions')) || []
   },
   set(transactions) {
-    localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions))
+    localStorage.setItem(
+      'dev.finances:transactions',
+      JSON.stringify(transactions)
+    )
   }
 }
 
@@ -59,22 +61,22 @@ const Transaction = {
 
 const cardTotal = {
   // LOOKING FOR BETTER SOLUTION
-  dcard(){
+  dcard() {
     let dTotal = Transaction.total()
-    if(dTotal == 0){
-       document.querySelector('.total').classList.add('even')
-       document.querySelector('.total').classList.remove('negative')
-       document.querySelector('.total').classList.remove('positive')
+    if (dTotal == 0) {
+      document.querySelector('.total').classList.add('even')
+      document.querySelector('.total').classList.remove('negative')
+      document.querySelector('.total').classList.remove('positive')
     }
-    if(dTotal < 0){
-       document.querySelector('.total').classList.add('negative')
-       document.querySelector('.total').classList.remove('even')
-       document.querySelector('.total').classList.remove('positive')
+    if (dTotal < 0) {
+      document.querySelector('.total').classList.add('negative')
+      document.querySelector('.total').classList.remove('even')
+      document.querySelector('.total').classList.remove('positive')
     }
-    if(dTotal > 0){
-       document.querySelector('.total').classList.add('positive')
-       document.querySelector('.total').classList.remove('even')
-       document.querySelector('.total').classList.remove('negative')
+    if (dTotal > 0) {
+      document.querySelector('.total').classList.add('positive')
+      document.querySelector('.total').classList.remove('even')
+      document.querySelector('.total').classList.remove('negative')
     }
   }
 }
